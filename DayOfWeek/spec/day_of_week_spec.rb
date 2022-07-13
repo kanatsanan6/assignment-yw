@@ -1,13 +1,11 @@
 require 'day_of_week'
 
 describe DayOfWeek do
-  let(:instance) { described_class.new }
+  let(:day) { DayOfWeek.new }
 
   describe 'solution' do
     context 'given day and number' do
       it 'returns correct day of same week' do
-        day = DayOfWeek.new
-  
         expect(day.solution('Mon', 0)).to eq 'Mon'
         expect(day.solution('Mon', 1)).to eq 'Tue'
         expect(day.solution('Mon', 2)).to eq 'Wed'
@@ -18,8 +16,6 @@ describe DayOfWeek do
       end
   
       it 'return correct day of next week' do
-        day = DayOfWeek.new
-  
         expect(day.solution('Mon', 7)).to eq 'Mon'
         expect(day.solution('Mon', 8)).to eq 'Tue'
         expect(day.solution('Mon', 9)).to eq 'Wed'
