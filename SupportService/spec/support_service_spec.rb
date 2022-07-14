@@ -13,7 +13,7 @@ describe 'SupportService' do
         expect(instance.find(ticket, [agent1, agent2])).to eq agent2
       end
     end
-    
+
     context 'no agent found' do
       it 'raises NoAgentFoundException' do
         expect { instance.find(ticket, []) }.to raise_error 'NoAgentFoundException'
