@@ -1,7 +1,7 @@
 require 'day_of_week'
 
 describe DayOfWeek do
-  let(:day) { DayOfWeek.new }
+  let(:day) { described_class.new }
 
   describe 'solution' do
     context 'given day and number' do
