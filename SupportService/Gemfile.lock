@@ -39,7 +39,7 @@ GEM
     unicode-display_width (2.2.0)
 
 PLATFORMS
-  universal-darwin-21
+  ruby
 
 DEPENDENCIES
   rspec (~> 3.11)
