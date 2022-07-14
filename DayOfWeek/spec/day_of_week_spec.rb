@@ -4,28 +4,56 @@ describe DayOfWeek do
   let(:day) { described_class.new }
 
   describe 'solution' do
-    context 'given day and number' do
-      it 'returns correct day of same week' do
-        expect(day.solution('Mon', 0)).to eq 'Mon'
-        expect(day.solution('Mon', 1)).to eq 'Tue'
-        expect(day.solution('Mon', 2)).to eq 'Wed'
-        expect(day.solution('Mon', 3)).to eq 'Thu'
-        expect(day.solution('Mon', 4)).to eq 'Fri'
-        expect(day.solution('Mon', 5)).to eq 'Sat'
-        expect(day.solution('Mon', 6)).to eq 'Sun'
+    context 'sample testcases' do
+      it 'returns Fri' do
+        expect(day.solution('Wed', 2)).to eq 'Fri'
       end
-  
-      it 'return correct day of next week' do
+
+      it 'returns Mon' do
+        expect(day.solution('Sat', 23)).to eq 'Mon'
+      end
+    end
+
+    context 'same week' do
+      it 'returns Mon' do
+        expect(day.solution('Mon', 0)).to eq 'Mon'
+      end
+
+      it 'returns Wed' do
+        expect(day.solution('Tue', 1)).to eq 'Wed'
+      end
+
+      it 'returns Thu' do
+        expect(day.solution('Wed', 2)).to eq 'Fri'
+      end
+
+      it 'returns Sun' do
+        expect(day.solution('Thu', 3)).to eq 'Sun'
+      end
+    end
+
+    context 'next week' do
+      it 'returns Mon' do
         expect(day.solution('Mon', 7)).to eq 'Mon'
-        expect(day.solution('Mon', 8)).to eq 'Tue'
-        expect(day.solution('Mon', 9)).to eq 'Wed'
-        expect(day.solution('Mon', 10)).to eq 'Thu'
-        expect(day.solution('Mon', 11)).to eq 'Fri'
-        expect(day.solution('Mon', 12)).to eq 'Sat'
-        expect(day.solution('Mon', 13)).to eq 'Sun'
-        expect(day.solution('Mon', 14)).to eq 'Mon'
+      end
+
+      it 'returns Wed' do
+        expect(day.solution('Tue', 8)).to eq 'Wed'
+      end
+
+      it 'returns Thu' do
+        expect(day.solution('Wed', 9)).to eq 'Fri'
+      end
+
+      it 'returns Sun' do
+        expect(day.solution('Thu', 10)).to eq 'Sun'
+      end
+    end
+
+    context 'big K' do
+      it 'returns Thu' do
+        expect(day.solution('Fri', 230)).to eq 'Thu'
       end
     end
   end
-
 end
