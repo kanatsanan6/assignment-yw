@@ -3,7 +3,7 @@ class DayOfWeek
   DAYS = %w[Mon Tue Wed Thu Fri Sat Sun].freeze
 
   def solution(day, num)
-    day_index = DAYS.find_index { |e| e == day }
+    day_index = DAYS.index(day)
     DAYS[(day_index + num) % 7]
   end
 end
