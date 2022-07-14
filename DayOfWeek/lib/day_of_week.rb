@@ -1,5 +1,6 @@
 class DayOfWeek
   attr_accessor :day, :num
+
   DAYS = %w[Mon Tue Wed Thu Fri Sat Sun].freeze
 
   def solution(day, num)
