@@ -13,6 +13,7 @@ describe 'SupportService' do
         expect(instance.find(ticket, [agent1, agent2])).to eq agent2
       end
     end
+    
     context 'no agent found' do
       it 'raises NoAgentFoundException' do
         expect { instance.find(ticket, []) }.to raise_error 'NoAgentFoundException'
@@ -23,6 +24,7 @@ describe 'SupportService' do
         expect { instance.find(ticket, [agent]) }.to raise_error 'NoAgentFoundException'
       end
     end
+
     context 'least loaded agent with nonsorted skills' do
       it 'returns agent2' do
         agent3 = Agent.new(name = 'C', skills = ['Spanish', 'Japanese', 'English'], load = 0)
@@ -62,6 +64,7 @@ describe 'SupportService' do
         expect(instance.find(ticket, [agent1, agent2, agent3])).to eq agent3
       end
     end
+
     context 'least flexible agent with more load' do
       it 'returns agent3' do
         agent3 = Agent.new(name = 'C', skills = ['English, Japanese'], load = 1)
@@ -69,6 +72,7 @@ describe 'SupportService' do
         expect(instance.find(ticket, [agent3, agent4])).to eq agent4
       end
     end
+
     context 'least flexible agent with nonsorted load' do
       it 'returns agent3' do
         agent3 = Agent.new(name = 'C', skills = ['English'], load = 0)
