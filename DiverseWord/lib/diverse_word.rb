@@ -9,7 +9,7 @@ class DiverseWord
       result << start
       remain_char[start] -= 1
 
-      if remain_char[start] > 0 && (result.length < 2 or result[-2] != start)
+      if remain_char[start] > 0 && (result.length < 2 || result[-2] != start)
         result << start
         remain_char[start] -= 1
       end
@@ -18,7 +18,7 @@ class DiverseWord
       remain_char[stop] -= 1
 
       remain_char = remain_char.sort_by { |_, value| -value }.to_h
-      (start, _), (stop, _) = remain_char.first 2
+      start, stop = remain_char.keys.first(2)
 
     end
 

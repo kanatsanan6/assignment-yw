@@ -4,7 +4,7 @@ class DiverseWordHeler
   attr_accessor :a, :b, :c, :ans
 
   def correct?(a, b, c, ans)
-    return false if ans.count('a') > a or ans.count('b') > b or ans.count('c') > c
+    return false if ans.count('a') > a || ans.count('b') > b || ans.count('c') > c
 
     count = 1
     last_index = 0
