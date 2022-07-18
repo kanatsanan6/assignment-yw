@@ -40,6 +40,7 @@ describe 'TreeVisibility' do
 
         expect(instance.solution(tree)).to eq 4
       end
+      
       it 'returns 2' do
         tree = Tree.new([8, [2, [8, nil, nil], [7, nil, nil]], [6, nil, nil]])
 

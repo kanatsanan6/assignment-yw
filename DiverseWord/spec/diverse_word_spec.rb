@@ -62,11 +62,13 @@ describe DiverseWord do
         expect(result.length).to eq 2
         expect(diverse_helper.correct?(3, 0, 0, result)).to eq true
       end
+
       it 'returns answer with 2 characters' do
         result = instance.solution(0, 3, 0)
         expect(result.length).to eq 2
         expect(diverse_helper.correct?(0, 3, 0, result)).to eq true
       end
+
       it 'returns answer with 2 characters' do
         result = instance.solution(0, 0, 3)
         expect(result.length).to eq 2
@@ -80,11 +82,13 @@ describe DiverseWord do
         expect(result.length).to eq 6
         expect(diverse_helper.correct?(0, 3, 3, result)).to eq true
       end
+
       it 'returns answer with 6 characters' do
         result = instance.solution(3, 0, 3)
         expect(result.length).to eq 6
         expect(diverse_helper.correct?(3, 0, 3, result)).to eq true
       end
+
       it 'returns answer with 6 characters' do
         result = instance.solution(3, 3, 0)
         expect(result.length).to eq 6
