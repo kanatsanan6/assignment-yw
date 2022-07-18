@@ -3,7 +3,7 @@ class DiverseWord
 
   def solution(a, b, c)
     result = []
-    remain_char = { 'a': a, 'b': b, 'c': c }.sort_by { |_, value| -value }.to_h
+    remain_char = { 'a' => a, 'b' => b, 'c' => c }.sort_by { |_, value| -value }.to_h
     (start, _), (stop, _) = remain_char.first 2
     while remain_char[start].positive? and remain_char[stop].positive?
       result << start
