@@ -20,19 +20,19 @@ class TreeVisibility
   attr_accessor :tree
 
   def solution(tree)
-    @@ans = 0
+    @ans = 0
     visible(tree, tree.x)
-    return @@ans
+
+    @ans
   end
 
   private
 
   def visible(tree, max_now)
     return 0 if tree.nil?
-
     return 0 if tree.x.nil?
 
-    @@ans += 1 if max_now <= tree.x
+    @ans += 1 if max_now <= tree.x
 
     max_now = [max_now, tree.x].max
     visible(tree.l, max_now)
