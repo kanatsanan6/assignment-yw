@@ -14,7 +14,7 @@ describe DayOfWeek do
       end
     end
 
-    context 'same week' do
+    context 'same week' dox
       it 'returns Mon' do
         expect(day.solution('Mon', 0)).to eq 'Mon'
       end
